@@ -1,5 +1,6 @@
 package cn.hytc.mysql.service;
 
+import cn.hytc.mysql.entity.Clazz;
 import cn.hytc.mysql.entity.Emp;
 import cn.hytc.mysql.entity.PageResult;
 import org.springframework.stereotype.Service;
@@ -8,8 +9,7 @@ import java.util.List;
 
 public interface EmpService {
     List<Emp> list();
-
-    PageResult page(Integer page, Integer pageSize);
+    PageResult<Emp> page(Integer page, Integer pageSize);
     /**
      * 添加员工
      * @param emp

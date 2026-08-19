@@ -34,11 +34,11 @@ public class EmpServiceImpl implements EmpService {
         return empMapper.list();
     }
 
-    public PageResult page(Integer page, Integer pageSize) {
+    public PageResult<Emp> page(Integer page, Integer pageSize) {
         PageHelper.startPage(page, pageSize);
         List<Emp> empList = empMapper.list();
         Page<Emp> p = (Page<Emp>) empList;
-        return new PageResult(p.getTotal(), p.getResult());
+        return new PageResult<>(p.getTotal(), p.getResult());
     }
     @Transactional
     @Override

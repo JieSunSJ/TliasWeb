@@ -1,5 +1,6 @@
 package cn.hytc.mysql.controller;
 
+import cn.hytc.mysql.entity.Clazz;
 import cn.hytc.mysql.entity.Emp;
 import cn.hytc.mysql.entity.PageResult;
 import cn.hytc.mysql.entity.Result;
