@@ -1,12 +1,44 @@
 package cn.hytc.mysql.service.impl;
 
+import cn.hytc.mysql.entity.Student;
 import cn.hytc.mysql.mapper.StudentMapper;
 import cn.hytc.mysql.service.StudentService;
+import cn.hytc.mysql.vo.PageResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentMapper studentMapper;
+    @Override
+    public List<Student> list(String name, String degree, Integer clazzId) {
+        return studentMapper.list(name, degree, clazzId);
+    }
+    @Override
+    public PageResult<Student> page(String name, String degree, Integer clazzId, Integer page, Integer pageSize) {
+        PageHelper.startPage(page, pageSize);
+        List<Student> list = studentMapper.list(name, degree, clazzId);
+        PageInfo<Student> pageInfo = new PageInfo<>(list);
+        return new PageResult<>(pageInfo.getTotal(), pageInfo.getList());
+    }
+    @Override
+    public void addStudent(Student student) {
+        student.setCreateTime(LocalDateTime.now());
+        student.setUpdateTime(LocalDateTime.now());
+        studentMapper.add(student);
+    }
+    @Override
+    public void deleteById(Integer id) {
+        studentMapper.deleteById(id);
+    }
+    @Override
+    public void updateStudent(Student student) {
+        studentMapper.updateById(student);
+    }
 }
