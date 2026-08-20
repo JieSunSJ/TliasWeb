@@ -1,9 +1,8 @@
 package cn.hytc.mysql.service;
 
-import cn.hytc.mysql.entity.Clazz;
+
 import cn.hytc.mysql.entity.Emp;
-import cn.hytc.mysql.entity.PageResult;
-import org.springframework.stereotype.Service;
+import cn.hytc.mysql.vo.PageResult;
 
 import java.util.List;
 

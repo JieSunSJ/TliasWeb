@@ -1,13 +1,13 @@
 package cn.hytc.mysql.controller;
 
-import cn.hytc.mysql.entity.AliyunOSSOperator;
-import cn.hytc.mysql.entity.Result;
+import cn.hytc.mysql.config.AliyunOSSOperator;
+import cn.hytc.mysql.vo.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import java.io.File;
+
 import java.util.UUID;
 
 @Slf4j

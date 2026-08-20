@@ -1,5 +1,7 @@
-package cn.hytc.mysql.entity;
+package cn.hytc.mysql.exceotion;
 
+
+import cn.hytc.mysql.vo.Result;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

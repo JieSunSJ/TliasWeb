@@ -1,5 +1,6 @@
 package cn.hytc.mysql.service.impl;
 
+
 import cn.hytc.mysql.entity.EmpLog;
 import cn.hytc.mysql.mapper.EmpLogMapper;
 import cn.hytc.mysql.service.EmpLogService;
@@ -7,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 public class EmpLogServiceImpl implements EmpLogService {

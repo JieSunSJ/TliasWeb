@@ -1,5 +1,6 @@
 package cn.hytc.mysql.service;
 
+
 import cn.hytc.mysql.entity.EmpLog;
 
 public interface EmpLogService {

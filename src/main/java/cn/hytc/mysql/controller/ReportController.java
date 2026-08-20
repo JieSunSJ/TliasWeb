@@ -1,7 +1,7 @@
 package cn.hytc.mysql.controller;
 
 import cn.hytc.mysql.entity.JobOption;
-import cn.hytc.mysql.entity.Result;
+import cn.hytc.mysql.vo.Result;
 import cn.hytc.mysql.service.ReportService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,13 +1,14 @@
 package cn.hytc.mysql.service.impl;
 
+
 import cn.hytc.mysql.entity.Emp;
 import cn.hytc.mysql.entity.EmpExpr;
 import cn.hytc.mysql.entity.EmpLog;
-import cn.hytc.mysql.entity.PageResult;
 import cn.hytc.mysql.mapper.EmpExprMapper;
 import cn.hytc.mysql.mapper.EmpMapper;
 import cn.hytc.mysql.service.EmpLogService;
 import cn.hytc.mysql.service.EmpService;
+import cn.hytc.mysql.vo.PageResult;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;

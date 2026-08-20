@@ -1,16 +1,14 @@
 package cn.hytc.mysql.controller;
 
-import cn.hytc.mysql.entity.Clazz;
 import cn.hytc.mysql.entity.Emp;
-import cn.hytc.mysql.entity.PageResult;
-import cn.hytc.mysql.entity.Result;
+import cn.hytc.mysql.vo.PageResult;
+import cn.hytc.mysql.vo.Result;
 import cn.hytc.mysql.service.EmpService;
 import cn.hytc.mysql.service.ReportService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -34,36 +32,40 @@ public class EmpController {
         PageResult pageResult = empService.page(page, pageSize);
         return new Result(200, "success", pageResult);
     }
+
     /**
      * 添加员工
      */
     @PostMapping
-    public Result save(@RequestBody Emp emp){
+    public Result save(@RequestBody Emp emp) {
         empService.save(emp);
         return Result.success(emp);
     }
+
     /**
      * 批量删除员工
      */
     @DeleteMapping
-    public Result delete(@RequestParam List<Integer> ids){
+    public Result delete(@RequestParam List<Integer> ids) {
         log.info("批量删除员工: ids={} ", ids);
         empService.deleteByIds(ids);
         return Result.success("删除成功");
     }
+
     /**
      * 根据ID查询员工
      */
     @GetMapping("/{id}")
-    public Result getById(@PathVariable Integer id){
+    public Result getById(@PathVariable Integer id) {
         log.info("根据ID查询员工: id={} ", id);
         return Result.success(empService.getById(id));
     }
+
     /**
      * 根据ID修改员工
      */
     @PutMapping
-    public Result update(@RequestBody Emp emp){
+    public Result update(@RequestBody Emp emp) {
         log.info("根据ID修改员工: emp={} ", emp);
         empService.updateById(emp);
         return Result.success("修改成功");

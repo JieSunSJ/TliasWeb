@@ -1,4 +1,5 @@
-package cn.hytc.mysql.entity;
+package cn.hytc.mysql.config;
+
 
 import com.aliyun.oss.ClientBuilderConfiguration;
 import com.aliyun.oss.OSS;

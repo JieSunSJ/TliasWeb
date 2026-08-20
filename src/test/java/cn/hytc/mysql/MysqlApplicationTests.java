@@ -1,7 +1,7 @@
 package cn.hytc.mysql;
 
 import cn.hytc.mysql.entity.Emp;
-import cn.hytc.mysql.entity.PageResult;
+import cn.hytc.mysql.vo.PageResult;
 import cn.hytc.mysql.mapper.EmpMapper;
 import cn.hytc.mysql.service.impl.EmpServiceImpl;
 import org.junit.jupiter.api.Test;

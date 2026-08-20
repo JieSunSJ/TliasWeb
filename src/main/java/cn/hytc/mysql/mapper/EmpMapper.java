@@ -1,8 +1,6 @@
 package cn.hytc.mysql.mapper;
 
 import cn.hytc.mysql.entity.Emp;
-import cn.hytc.mysql.entity.EmpExpr;
-import cn.hytc.mysql.entity.Result;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

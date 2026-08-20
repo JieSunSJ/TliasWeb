@@ -1,4 +1,5 @@
-package cn.hytc.mysql.entity;
+package cn.hytc.mysql.config;
+
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

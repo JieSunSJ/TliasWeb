@@ -1,7 +1,8 @@
 package cn.hytc.mysql.service;
 
+
 import cn.hytc.mysql.entity.Clazz;
-import cn.hytc.mysql.entity.PageResult;
+import cn.hytc.mysql.vo.PageResult;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -9,4 +10,10 @@ import java.util.List;
 public interface ClazzService {
     List<Clazz> list(String name, LocalDate begin, LocalDate end);
     PageResult<Clazz> page(String name, LocalDate begin, LocalDate end, Integer page, Integer pageSize);
+    void deleteById(Integer id);
+    void add(Clazz clazz);
+    Clazz getById(Integer id);
+    void update(Clazz clazz);
+    List<Clazz> Alllist();
+    PageResult<Clazz> allPage(Integer page, Integer pageSize);
 }
