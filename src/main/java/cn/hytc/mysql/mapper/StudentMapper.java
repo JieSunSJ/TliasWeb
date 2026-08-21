@@ -4,6 +4,7 @@ import cn.hytc.mysql.entity.Student;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface StudentMapper {
@@ -12,4 +13,7 @@ public interface StudentMapper {
     int deleteById(@Param("id") Integer id);
     int add(Student student);
     int updateById(Student student);
+    List<Map> countStudentGenderData();
+    List<Map> countStudentCollegeData();
+    List<Map<String, Object>> countStudentCountData();
 }

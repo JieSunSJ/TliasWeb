@@ -1,4 +1,4 @@
-package cn.hytc.mysql.entity;
+package cn.hytc.mysql.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -19,15 +19,14 @@ public class ClazzController {
     @Autowired
     private ClazzService clazzService;
 
+    /** 分页查询班级 */
     @GetMapping
     public Result getClazzList(@RequestParam String name, @DateTimeFormat(pattern = "yyyy-M-d") LocalDate begin, @DateTimeFormat(pattern = "yyyy-M-d") LocalDate end, @RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "5") Integer pageSize) {
         PageResult<Clazz> clazzList = clazzService.page(name, begin, end, page, pageSize);
         return Result.success(clazzList);
     }
 
-    /**
-     * 删除班级
-     */
+    /** 删除班级 */
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id) {
         log.info("删除班级: id={} ", id);
@@ -35,9 +34,7 @@ public class ClazzController {
         return Result.success("删除成功");
     }
 
-    /**
-     * 添加班级
-     */
+    /** 添加班级 */
     @PostMapping
     public Result add(@RequestBody Clazz clazz) {
         log.info("添加班级: {}", clazz);
@@ -45,9 +42,7 @@ public class ClazzController {
         return Result.success("添加成功");
     }
 
-    /**
-     * 根据ID查询
-     */
+    /** 根据ID查询班级 */
     @GetMapping("/{id}")
     public Result get(@PathVariable Integer id) {
         log.info("根据ID查询: id={}", id);
@@ -55,29 +50,23 @@ public class ClazzController {
         return Result.success(clazz);
     }
 
-    /**
-     * 更新班级
-     */
+    /** 更新班级 */
     @PutMapping
     public Result update(@RequestBody Clazz clazz) {
         log.info("更新班级: {}", clazz);
         clazzService.update(clazz);
         return Result.success("更新成功");
     }
-    /**
-     * 查询所有班级
-     *
-     */
+
+    /** 查询所有班级 */
     @GetMapping("/all")
     public Result getAll() {
         log.info("查询所有班级");
         List<Clazz> clazzList = clazzService.Alllist();
         return Result.success(clazzList);
     }
-    /**
-     * 查询所有班级并且分页
-     *
-     */
+
+    /** 分页查询所有班级 */
     @RequestMapping("/all/page")
     public Result getAllPage(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "5") Integer pageSize) {
         log.info("查询所有班级, 分页: page={}, pageSize={}", page, pageSize);

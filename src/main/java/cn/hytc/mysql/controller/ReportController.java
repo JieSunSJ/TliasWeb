@@ -1,8 +1,9 @@
 package cn.hytc.mysql.controller;
 
-import cn.hytc.mysql.entity.JobOption;
+import cn.hytc.mysql.vo.JobOption;
 import cn.hytc.mysql.vo.Result;
 import cn.hytc.mysql.service.ReportService;
+import cn.hytc.mysql.vo.StudentClazzOption;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,20 +21,43 @@ public class ReportController {
     @Autowired
     private ReportService reportService;
 
-    /**
-     * 统计各个职位的员工人数
-     */
+    /** 统计各职位员工人数 */
     @GetMapping("/empJobData")
-    public Result getEmpJobData(){
+    public Result getEmpJobData() {
         log.info("统计各个职位的员工人数");
         JobOption jobOption = reportService.getEmpJobData();
         return Result.success(jobOption);
     }
-    // 统计男生女生数量
+
+    /** 统计员工性别数量 */
     @GetMapping("/empGenderData")
-    public Result getEmpGenderData(){
-        log.info("统计男生女生数量");
+    public Result getEmpGenderData() {
+        log.info("统计员工性别数量");
         List<Map> list = reportService.getEmpGenderData();
         return Result.success(list);
+    }
+
+    /** 统计学生性别数量 */
+    @GetMapping("/studentGenderData")
+    public Result getStudentGenderData() {
+        log.info("统计学生性别数量");
+        List<Map> list = reportService.getStudentGenderData();
+        return Result.success(list);
+    }
+
+    /** 统计学生学历数量 */
+    @GetMapping("/studentCollegeData")
+    public Result getStudentCollegeData() {
+        log.info("统计学生学历数量");
+        List<Map> list = reportService.getStudentCollegeData();
+        return Result.success(list);
+    }
+
+    /** 统计各班级学生人数 */
+    @GetMapping("/studentCountData")
+    public Result getStudentCountData() {
+        log.info("统计各班级学生人数");
+        StudentClazzOption studentClazzOption = reportService.getStudentCountData();
+        return Result.success(studentClazzOption);
     }
 }

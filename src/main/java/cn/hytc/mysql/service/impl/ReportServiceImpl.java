@@ -1,12 +1,15 @@
 package cn.hytc.mysql.service.impl;
 
 
-import cn.hytc.mysql.entity.JobOption;
+import cn.hytc.mysql.vo.JobOption;
 import cn.hytc.mysql.mapper.EmpMapper;
+import cn.hytc.mysql.mapper.StudentMapper;
 import cn.hytc.mysql.service.ReportService;
+import cn.hytc.mysql.vo.StudentClazzOption;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +18,8 @@ public class ReportServiceImpl implements ReportService {
 
     @Autowired
     private EmpMapper empMapper;
+    @Autowired
+    private StudentMapper studentMapper;
 
     @Override
     public JobOption getEmpJobData() {
@@ -24,7 +29,29 @@ public class ReportServiceImpl implements ReportService {
         return new JobOption(jobList, dataList);
     }
     @Override
+    public List<Map> getStudentGenderData() {
+        return studentMapper.countStudentGenderData();
+    }
+    @Override
     public List<Map> getEmpGenderData() {
         return empMapper.countEmpGenderData();
+    }
+    @Override
+    public List<Map> getStudentCollegeData() {
+        return studentMapper.countStudentCollegeData();
+    }
+    @Override
+    public StudentClazzOption getStudentCountData() {
+        // 统计各班级学生人数，对List<Map>进行拆分
+        List<Map<String, Object>> list = studentMapper.countStudentCountData();
+        List<String> clazzList = new ArrayList<>(list.size());
+        List<Long> dataList = new ArrayList<>(list.size());
+
+        for (Map<String, Object> dataMap : list) {
+            clazzList.add(String.valueOf(dataMap.get("name")));
+            dataList.add((Long) dataMap.get("value"));
+        }
+
+        return new StudentClazzOption(clazzList, dataList);
     }
 }

@@ -4,10 +4,15 @@ package cn.hytc.mysql.service.impl;
 import cn.hytc.mysql.entity.EmpLog;
 import cn.hytc.mysql.mapper.EmpLogMapper;
 import cn.hytc.mysql.service.EmpLogService;
+import cn.hytc.mysql.vo.PageResult;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class EmpLogServiceImpl implements EmpLogService {
@@ -19,5 +24,23 @@ public class EmpLogServiceImpl implements EmpLogService {
     @Override
     public void insertLog(EmpLog empLog) {
         empLogMapper.insert(empLog);
+    }
+
+    @Override
+    public List<EmpLog> list() {
+        return empLogMapper.list();
+    }
+
+    @Override
+    public PageResult<EmpLog> page(Integer page, Integer pageSize) {
+        PageHelper.startPage(page, pageSize);
+        List<EmpLog> logList = empLogMapper.list();
+        Page<EmpLog> p = (Page<EmpLog>) logList;
+        return new PageResult<>(p.getTotal(), p.getResult());
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        empLogMapper.deleteById(id);
     }
 }

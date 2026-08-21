@@ -71,4 +71,13 @@
             </trim>
         where id = #{id}
     </update>
+    <select id="countStudentGenderData" resultType="java.util.Map">
+        select IF(gender = 1, '男', '女') as name, count(*) as value from student group by gender
+    </select>
+    <select id="countStudentCollegeData" resultType="java.util.Map">
+        select IF(is_college = 1, '本科', '高中') as name, count(*) as value from student group by is_college
+    </select>
+    <select id="countStudentCountData" resultType="java.util.Map">
+        select clazz_id as name, count(*) as value from student group by clazz_id
+    </select>
 </mapper>

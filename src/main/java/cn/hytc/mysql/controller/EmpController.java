@@ -21,11 +21,13 @@ public class EmpController {
     private ReportService reportService;
 
 
+    /** 查询所有员工 */
     @RequestMapping("/list")
     public Result list() {
         return new Result(200, "success", empService.list());
     }
 
+    /** 分页查询员工 */
     @RequestMapping("/page")
     public Result page(@RequestParam(defaultValue = "1") Integer page,
                        @RequestParam(defaultValue = "10") Integer pageSize) {
@@ -33,18 +35,14 @@ public class EmpController {
         return new Result(200, "success", pageResult);
     }
 
-    /**
-     * 添加员工
-     */
+    /** 添加员工 */
     @PostMapping
     public Result save(@RequestBody Emp emp) {
         empService.save(emp);
         return Result.success(emp);
     }
 
-    /**
-     * 批量删除员工
-     */
+    /** 批量删除员工 */
     @DeleteMapping
     public Result delete(@RequestParam List<Integer> ids) {
         log.info("批量删除员工: ids={} ", ids);
@@ -52,18 +50,14 @@ public class EmpController {
         return Result.success("删除成功");
     }
 
-    /**
-     * 根据ID查询员工
-     */
+    /** 根据ID查询员工 */
     @GetMapping("/{id}")
     public Result getById(@PathVariable Integer id) {
         log.info("根据ID查询员工: id={} ", id);
         return Result.success(empService.getById(id));
     }
 
-    /**
-     * 根据ID修改员工
-     */
+    /** 根据ID修改员工 */
     @PutMapping
     public Result update(@RequestBody Emp emp) {
         log.info("根据ID修改员工: emp={} ", emp);

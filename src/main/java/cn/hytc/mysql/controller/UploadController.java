@@ -15,12 +15,11 @@ import java.util.UUID;
 public class UploadController {
 
     private static final String UPLOAD_DIR = "D:/images/";
-    /**
-     * 上传文件 - 参数名file
-     */
+
     @Autowired
     private AliyunOSSOperator aliyunOSSOperator;
 
+    /** 上传文件 */
     @PostMapping("/upload")
     public Result upload(MultipartFile file) throws Exception {
         log.info("上传文件：{}", file);
