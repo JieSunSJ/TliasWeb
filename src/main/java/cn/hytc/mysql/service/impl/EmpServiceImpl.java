@@ -3,10 +3,12 @@ package cn.hytc.mysql.service.impl;
 
 import cn.hytc.mysql.entity.Emp;
 import cn.hytc.mysql.entity.EmpExpr;
+import cn.hytc.mysql.entity.LoginInfo;
 import cn.hytc.mysql.mapper.EmpExprMapper;
 import cn.hytc.mysql.mapper.EmpMapper;
 import cn.hytc.mysql.annotation.Log;
 import cn.hytc.mysql.service.EmpService;
+import cn.hytc.mysql.utils.JwtUtils;
 import cn.hytc.mysql.vo.PageResult;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -17,7 +19,9 @@ import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class EmpServiceImpl implements EmpService {
@@ -82,5 +86,20 @@ public class EmpServiceImpl implements EmpService {
             exprList.forEach(empExpr -> empExpr.setEmpId(empId));
             empExprMapper.insertBatch(exprList);
         }
+    }
+    @Override
+    public LoginInfo login(Emp emp) {
+        Emp empLogin = empMapper.getUsernameAndPassword(emp);
+        if(empLogin != null){
+            //1. 生成JWT令牌
+            Map<String,Object> dataMap = new HashMap<>();
+            dataMap.put("id", empLogin.getId());
+            dataMap.put("username", empLogin.getUsername());
+
+            String jwt = JwtUtils.generateJwt(dataMap);
+            LoginInfo loginInfo = new LoginInfo(empLogin.getId(), empLogin.getUsername(), empLogin.getName(), jwt);
+            return loginInfo;
+        }
+        return null;
     }
 }

@@ -26,6 +26,8 @@ public class EmpLogServiceImpl implements EmpLogService {
         empLogMapper.insert(empLog);
     }
 
+
+
     @Override
     public List<EmpLog> list() {
         return empLogMapper.list();
