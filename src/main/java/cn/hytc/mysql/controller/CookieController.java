@@ -9,6 +9,9 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Cookie演示控制器
+ */
 @Slf4j
 @RestController
 public class CookieController {

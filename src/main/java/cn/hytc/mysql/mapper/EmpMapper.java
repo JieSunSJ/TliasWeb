@@ -6,6 +6,9 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 员工Mapper
+ */
 @Mapper
 public interface EmpMapper {
     @Select("select e.*, d.name as dept_name from emp e left join dept d on e.dept_id = d.id")

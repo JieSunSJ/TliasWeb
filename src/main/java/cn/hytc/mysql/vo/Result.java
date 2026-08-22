@@ -5,14 +5,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 统一响应结果
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Result {
-    private Integer code;
-    private String msg;
-    private Object data;
-
+    private Integer code; // 状态码
+    private String msg;   // 提示信息
+    private Object data;  // 返回数据
 
     public Result(int code, String msg, Object data) {
         this.code = code;

@@ -14,6 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * 操作日志服务实现
+ */
 @Service
 public class EmpLogServiceImpl implements EmpLogService {
 

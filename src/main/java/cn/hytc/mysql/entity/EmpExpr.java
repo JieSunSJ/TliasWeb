@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+/**
+ * 员工工作经历实体
+ */
 @Data
 //无参构造方法
 @NoArgsConstructor

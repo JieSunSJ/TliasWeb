@@ -8,6 +8,9 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
+/**
+ * 操作日志Mapper
+ */
 @Mapper
 public interface EmpLogMapper {
 

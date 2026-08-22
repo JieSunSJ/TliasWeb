@@ -7,6 +7,9 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.Date;
 import java.util.Map;
 
+/**
+ * JWT令牌工具类
+ */
 public class JwtUtils {
 
     private static String signKey = "SVRIRUlNQQ==";
@@ -38,4 +41,3 @@ public class JwtUtils {
         return claims;
     }
 }
-

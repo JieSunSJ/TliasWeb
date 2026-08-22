@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * Session演示控制器
+ */
 @Slf4j
 @RestController
 public class SessionController {

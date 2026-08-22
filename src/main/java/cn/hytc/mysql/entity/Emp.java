@@ -9,6 +9,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * 员工实体
+ */
 @Data
 //无参构造方法
 @NoArgsConstructor

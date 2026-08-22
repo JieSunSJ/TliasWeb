@@ -9,6 +9,9 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.nio.file.Files;
 
+/**
+ * 阿里云OSS上传演示
+ */
 public class Demo {
 
     public static void main(String[] args) throws Exception {

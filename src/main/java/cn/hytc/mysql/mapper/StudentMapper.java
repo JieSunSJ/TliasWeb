@@ -6,6 +6,9 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 学生Mapper
+ */
 @Mapper
 public interface StudentMapper {
     List<Student> list(@Param("name") String name, @Param("degree") String degree, @Param("clazzId") Integer clazzId);

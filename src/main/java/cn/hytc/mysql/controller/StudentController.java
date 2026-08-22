@@ -9,6 +9,9 @@ import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 学生管理控制器
+ */
 @RestController
 @RequestMapping("/students")
 public class StudentController {

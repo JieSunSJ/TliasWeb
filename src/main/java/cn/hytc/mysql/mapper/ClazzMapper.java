@@ -5,6 +5,9 @@ import org.apache.ibatis.annotations.*;
 
 import java.time.LocalDate;
 import java.util.List;
+/**
+ * 班级Mapper
+ */
 @Mapper
 public interface ClazzMapper {
     List<Clazz> list(@Param("name") String name, @Param("beginDate") LocalDate beginDate, @Param("endDate") LocalDate endDate);

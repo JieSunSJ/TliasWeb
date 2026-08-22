@@ -12,6 +12,9 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
+/**
+ * 日志切面 - 拦截@Log注解的方法，记录操作日志
+ */
 @Aspect
 @Component
 public class LogAspect {

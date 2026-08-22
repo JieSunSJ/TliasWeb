@@ -7,6 +7,9 @@ import cn.hytc.mysql.vo.PageResult;
 
 import java.util.List;
 
+/**
+ * 员工服务接口
+ */
 public interface EmpService {
     List<Emp> list();
     PageResult<Emp> page(Integer page, Integer pageSize);

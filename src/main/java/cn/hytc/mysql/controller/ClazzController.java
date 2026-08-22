@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * 班级管理控制器
+ */
 @Slf4j
 @RestController
 @RequestMapping("/clzzs")

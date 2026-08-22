@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 报表服务实现
+ */
 @Service
 public class ReportServiceImpl implements ReportService {
 

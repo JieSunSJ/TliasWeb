@@ -6,6 +6,9 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
+/**
+ * 员工工作经历Mapper
+ */
 @Mapper
 public interface EmpExprMapper {
         /**

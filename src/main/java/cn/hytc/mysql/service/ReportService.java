@@ -7,6 +7,9 @@ import cn.hytc.mysql.vo.StudentClazzOption;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 报表服务接口
+ */
 public interface ReportService {
     /**
      * 统计各个职位的员工人数

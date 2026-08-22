@@ -2,6 +2,9 @@ package cn.hytc.mysql;
 
 import java.util.*;
 import java.util.stream.*;
+/**
+ * Stream流测试
+ */
 class test {
     public static void main(String[] args) {
         // 1. 字符串列表（用于题1、题4）

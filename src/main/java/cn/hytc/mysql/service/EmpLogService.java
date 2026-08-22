@@ -6,6 +6,9 @@ import cn.hytc.mysql.vo.PageResult;
 
 import java.util.List;
 
+/**
+ * 操作日志服务接口
+ */
 public interface EmpLogService {
 
     void insertLog(EmpLog empLog);

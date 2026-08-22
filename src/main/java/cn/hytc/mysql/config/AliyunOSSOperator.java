@@ -15,6 +15,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
+/**
+ * 阿里云OSS文件上传操作类
+ */
 @Component
 public class AliyunOSSOperator {
 

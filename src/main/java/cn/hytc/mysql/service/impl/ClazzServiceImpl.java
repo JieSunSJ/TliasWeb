@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * 班级服务实现
+ */
 @Service
 public class ClazzServiceImpl implements ClazzService {
 

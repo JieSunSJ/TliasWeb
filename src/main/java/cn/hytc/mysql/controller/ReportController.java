@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 数据统计报表控制器
+ */
 @Slf4j
 @RequestMapping("/report")
 @RestController
